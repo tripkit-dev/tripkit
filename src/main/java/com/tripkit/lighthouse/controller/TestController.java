@@ -13,4 +13,7 @@ public class TestController {
     public String getTest() {
         return "Hello World!";
     }
+
+    @GetMapping("/2")
+    public String getTest2() {return "This is Second Test";}
 }
