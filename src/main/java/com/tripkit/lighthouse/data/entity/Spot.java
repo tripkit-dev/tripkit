@@ -18,4 +18,15 @@ public class Spot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String title;
+    private String link;
+    private String category;
+    private String description;
+    private String telephone;
+    private String address;
+    private String roadAddress;
+
+    private Integer mapx;
+    private Integer mapy;
 }
