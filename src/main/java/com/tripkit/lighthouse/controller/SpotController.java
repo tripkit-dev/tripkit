@@ -1,5 +1,6 @@
 package com.tripkit.lighthouse.controller;
 
+import com.tripkit.lighthouse.data.dto.SpotDto;
 import com.tripkit.lighthouse.data.entity.Spot;
 import com.tripkit.lighthouse.service.SpotService;
 import lombok.RequiredArgsConstructor;
@@ -27,8 +28,8 @@ public class SpotController {
     }
 
     @PostMapping("/")
-    public Spot putSpot() {
-
+    public Spot addSpot(@RequestBody SpotDto spotDto) {
+        return spotDto;
     }
     //TODO
 }
