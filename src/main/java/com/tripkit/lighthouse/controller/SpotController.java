@@ -1,7 +1,6 @@
 package com.tripkit.lighthouse.controller;
 
-import com.tripkit.lighthouse.data.dto.SpotDto;
-import com.tripkit.lighthouse.data.entity.Spot;
+import com.tripkit.lighthouse.data.dto.SpotBasicDto;
 import com.tripkit.lighthouse.service.SpotService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -19,17 +18,24 @@ public class SpotController {
     private final SpotService spotService;
 
     @GetMapping("/category")
-    public List<Spot> getSpotByCategory(
-            @RequestParam(required = false, defaultValue="카페") String category,
-            @PageableDefault(size = 10, sort="date", direction = Sort.Direction.DESC) Pageable pageable) {
+    public List<SpotBasicDto> getSpotByCategory(
+            @RequestParam(required = false, defaultValue = "카페") String category,
+            @PageableDefault(size = 10, sort = "date", direction = Sort.Direction.DESC) Pageable pageable) {
 
         return spotService.getSpotByCategory(category, pageable);
-        
+
+    }
+
+    @GetMapping("/tag")
+    public List<SpotBasicDto> getSpotByTag(
+            @RequestParam(required = false, defaultValue = "육식") String tag,
+            @PageableDefault(size = 10, sort = "title", direction = Sort.Direction.DESC) Pageable pageable) {
+
+        return spotService.getSpotByTag(tag, pageable);
     }
 
     @PostMapping("/")
-    public Spot addSpot(@RequestBody SpotDto spotDto) {
-        return spotDto;
+    public SpotBasicDto addSpot(@RequestBody SpotBasicDto spotBasicDto) {
+        return SpotService.addSpot(spotBasicDto);
     }
-    //TODO
 }

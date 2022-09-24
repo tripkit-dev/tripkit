@@ -1,21 +1,14 @@
-package com.tripkit.lighthouse.data.entity;
+package com.tripkit.lighthouse.data.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-
-@Getter
-@Setter
-@Table(name = "spot")
-@Entity(name = "Spot")
-@Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Spot {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class SpotFullDto {
+    // 스팟의 모든 정보를 한번에 다 내려주는 객체
 
     private String title;
     private String link;

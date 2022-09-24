@@ -1,5 +1,7 @@
 package com.tripkit.lighthouse.service;
 
+import com.tripkit.lighthouse.data.ModelMapperUtils;
+import com.tripkit.lighthouse.data.dto.SpotBasicDto;
 import com.tripkit.lighthouse.data.entity.Spot;
 import com.tripkit.lighthouse.repository.SpotRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +16,7 @@ import java.util.List;
 public class SpotService {
 
     private final SpotRepository spotRepository;
+    private final ModelMapperUtils modelMapperUtils;
 
     public List<Spot> getSpotByCategory(String category, Pageable pageable) {
         List<Spot> spots = new ArrayList<>();
@@ -22,7 +25,11 @@ public class SpotService {
         return spots;
     }
 
-    public Spot putSpot(Spot spot) {
-        // TODO
+    public Spot addSpot(SpotBasicDto spotBasicDto) {
+        Spot spot = new Spot();
+        spot = modelMapperUtils.getModelMapper().map(spotBasicDto, spot.getClass());
+
+        spotRepository.save(spot);
+        return spot;
     }
 }

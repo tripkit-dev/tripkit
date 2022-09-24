@@ -1,9 +1,6 @@
 package com.tripkit.lighthouse.data.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,6 +10,7 @@ import java.util.List;
 @Setter
 @Table(name = "line")
 @Entity(name = "Line")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Line {
