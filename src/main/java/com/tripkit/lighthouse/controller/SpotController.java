@@ -1,6 +1,7 @@
 package com.tripkit.lighthouse.controller;
 
 import com.tripkit.lighthouse.data.dto.SpotBasicDto;
+import com.tripkit.lighthouse.data.dto.SpotFullDto;
 import com.tripkit.lighthouse.service.SpotService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
