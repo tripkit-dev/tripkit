@@ -36,7 +36,7 @@ public class SpotService {
 
     public Spot addSpot(SpotBasicDto spotBasicDto) {
         Spot spot = new Spot();
-        spot = modelMapperUtils.getModelMapper().map(spotBasicDto, spot.getClass());
+        spot = getModelMapper().map(spotBasicDto, spot.getClass());
 
         spotRepository.save(spot);
         return spot;

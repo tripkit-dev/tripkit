@@ -3,6 +3,8 @@ package com.tripkit.lighthouse.data.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,14 +19,31 @@ public class Spot {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // 장소 이름
     private String title;
+    // 장소 사이트
     private String link;
+    // 장소 분류
     private String category;
+    // 장소 설명
     private String description;
+    // 장소 전화번호
     private String telephone;
+    // 장소 주소
     private String address;
+    // 장소 도로명 주소
     private String roadAddress;
 
+    // NAVER API 사용할 때 지도 위치 좌표값
+    // X값
     private Integer mapx;
+    // Y값
     private Integer mapy;
+
+    // 장소 메뉴
+    @OneToMany
+    private List<SpotDetail> spotDetails = new ArrayList<>();
+
+    @OneToMany
+    private List<Image> images = new ArrayList<>();
 }
