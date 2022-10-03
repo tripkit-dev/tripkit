@@ -23,8 +23,10 @@ public class Spot {
     private String title;
     // 장소 사이트
     private String link;
-    // 장소 분류
+    // 장소 분류 - 대략적
     private String category;
+    // 장소 분류 - 자세히
+    private String tag;
     // 장소 설명
     private String description;
     // 장소 전화번호

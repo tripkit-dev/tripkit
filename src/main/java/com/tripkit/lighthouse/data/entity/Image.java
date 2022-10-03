@@ -22,4 +22,7 @@ public class Image {
     private LocalDateTime created_at;
 
     //TODO
+    private String fileName;
+    private String fileOriName;
+    private String fileUrl;
 }

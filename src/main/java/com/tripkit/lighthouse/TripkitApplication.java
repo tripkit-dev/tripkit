@@ -1,10 +1,11 @@
 package com.tripkit.lighthouse;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@EnableScheduling
 @SpringBootApplication
 public class TripkitApplication {
 
@@ -12,4 +13,9 @@ public class TripkitApplication {
         SpringApplication.run(TripkitApplication.class, args);
     }
 
+    // Bean으로 등록하여 modelmapper를 활용할 클래스에 주입하여 사용
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 }

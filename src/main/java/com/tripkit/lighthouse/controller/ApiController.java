@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api")
 @RequiredArgsConstructor
-@RequestMapping(value = "/api/test")
-public class TestController {
+public class ApiController {
     @GetMapping("")
     public String getTest() {
         return "Hello World!";

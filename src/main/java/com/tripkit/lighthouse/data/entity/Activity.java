@@ -1,5 +1,6 @@
 package com.tripkit.lighthouse.data.entity;
 
+import com.tripkit.lighthouse.data.IsOpen;
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,8 +26,9 @@ public class Activity {
     private String description;
     // 행사 기간
     private String duration;
-    // 행사 개최 여부 TODO 진행 중, 개최 중, 개최 끝 3가지로 나뉘어야됨, boolean은 한계가 있음.
-    private Boolean isOpen;
+    // 행사 개최 여부 TODO - /진행 중/개최 중/개최 끝/ 3가지로 나뉘어야됨, boolean은 한계가 있음. => enum으로 변환 완료!
+    @Enumerated(EnumType.STRING)
+    private IsOpen isOpen;
 
     // 행사 위치
     @OneToMany
