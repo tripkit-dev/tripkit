@@ -29,4 +29,7 @@ public class Line {
     // 장소 node들
     @OneToMany
     private List<Spot> spots = new ArrayList<>();
+
+    @OneToMany
+    private List<Image> images = new ArrayList<>();
 }

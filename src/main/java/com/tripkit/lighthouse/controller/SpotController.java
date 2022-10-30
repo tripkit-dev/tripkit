@@ -17,7 +17,7 @@ public class SpotController {
 
     private final SpotService spotService;
 
-    // 카테고리별 장소 불러오기. 카테고리는 data/SpotCategory.enum 참고
+    // 카테고리별 장소 불러오기. 카테고리는 data/SpotCategory 참고
     @GetMapping("/category")
     public List<SpotBasicDto> getSpotByCategory(
             @RequestParam(required = false, defaultValue = "카페") String category,
@@ -26,7 +26,7 @@ public class SpotController {
         return spotService.getSpotByCategory(category, pageable);
     }
 
-    // 태그별 장소 불러오기. 태그는 data/SpotTag.enum 참고
+    // 태그별 장소 불러오기. 태그는 data/SpotTag 참고
     @GetMapping("/tag")
     public List<SpotBasicDto> getSpotByTag(
             @RequestParam(required = false, defaultValue = "육식") String tag,
@@ -35,8 +35,18 @@ public class SpotController {
         return spotService.getSpotByTag(tag, pageable);
     }
 
+    // TODO 좋아요한 장소들만 불러오기
+    @GetMapping("/title")
+    public List<SpotBasicDto> getSpotByTitle(
+            @RequestParam(required = true) String title,
+            @PageableDefault(size = 10, sort = "title", direction = Sort.Direction.DESC) Pageable pageable
+    ) {
+
+        return spotService.getSpotByTitle(title, pageable);
+    }
+
     @PostMapping("/")
     public SpotBasicDto addSpot(@RequestBody SpotBasicDto spotBasicDto) {
-        return SpotService.addSpot(spotBasicDto);
+        return spotService.addSpot(spotBasicDto);
     }
 }
