@@ -1,5 +1,7 @@
 package com.tripkit.lighthouse.data.entity;
 
+import com.tripkit.lighthouse.data.entity.images.Image;
+import com.tripkit.lighthouse.data.entity.images.LineImage;
 import lombok.*;
 
 import javax.persistence.*;
@@ -27,9 +29,9 @@ public class Line {
     private LocalDateTime created_at;
 
     // 장소 node들
-    @OneToMany
+    @OneToMany(mappedBy = "line")
     private List<Spot> spots = new ArrayList<>();
 
-    @OneToMany
-    private List<Image> images = new ArrayList<>();
+    @OneToMany(mappedBy = "line")
+    private List<LineImage> images = new ArrayList<>();
 }

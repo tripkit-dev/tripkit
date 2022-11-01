@@ -1,14 +1,13 @@
 package com.tripkit.lighthouse.data.dto;
 
-import com.tripkit.lighthouse.data.entity.Image;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.tripkit.lighthouse.data.entity.images.Image;
+import com.tripkit.lighthouse.data.entity.images.LineImage;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,5 +19,5 @@ public class LineBasicDto {
     // 라인에 포함된 항목들
     private List<SpotBasicDto> spots;
     // 라인의 이미지들
-    private List<Image> images;
+    private List<LineImage> images;
 }

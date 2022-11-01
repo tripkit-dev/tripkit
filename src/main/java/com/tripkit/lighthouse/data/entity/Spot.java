@@ -1,5 +1,7 @@
 package com.tripkit.lighthouse.data.entity;
 
+import com.tripkit.lighthouse.data.entity.images.Image;
+import com.tripkit.lighthouse.data.entity.images.SpotImage;
 import lombok.*;
 
 import javax.persistence.*;
@@ -42,10 +44,14 @@ public class Spot {
     // Y값
     private Integer mapy;
 
+    @ManyToOne
+    @JoinColumn(name = "lineId")
+    private Line line;
+
     // 장소 메뉴
-    @OneToMany
+    @OneToMany(mappedBy = "spot")
     private List<SpotDetail> spotDetails = new ArrayList<>();
 
-    @OneToMany
-    private List<Image> images = new ArrayList<>();
+    @OneToMany(mappedBy = "spot")
+    private List<SpotImage> images = new ArrayList<>();
 }

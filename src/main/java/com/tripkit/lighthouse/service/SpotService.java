@@ -35,6 +35,7 @@ public class SpotService {
     }
 
     public SpotBasicDto addSpot(SpotBasicDto spotBasicDto) {
+
         Spot spot = new Spot();
 
         SpotBasicDto retDto = new SpotBasicDto();
@@ -47,7 +48,9 @@ public class SpotService {
     }
 
     public List<SpotBasicDto> getSpotByTitle(String title, Pageable pageable) {
+
         List<SpotBasicDto> spotBasicDtos = new ArrayList<>();
+
         return spotBasicDtos;
     }
 

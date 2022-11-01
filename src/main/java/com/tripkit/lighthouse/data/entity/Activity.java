@@ -1,6 +1,8 @@
 package com.tripkit.lighthouse.data.entity;
 
 import com.tripkit.lighthouse.data.IsOpen;
+import com.tripkit.lighthouse.data.entity.images.ActivityImage;
+import com.tripkit.lighthouse.data.entity.images.Image;
 import lombok.*;
 
 import javax.persistence.*;
@@ -31,10 +33,10 @@ public class Activity {
     private IsOpen isOpen;
 
     // 행사 위치
-    @OneToMany
+    @OneToMany(mappedBy = "activity")
     private List<Spot> spots = new ArrayList<>();
 
     // 행사 사진
-    @OneToMany
-    private List<Image> images = new ArrayList<>();
+    @OneToMany(mappedBy = "activity")
+    private List<ActivityImage> images = new ArrayList<>();
 }

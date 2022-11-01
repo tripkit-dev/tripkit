@@ -1,13 +1,10 @@
 package com.tripkit.lighthouse.data.dto;
 
 import com.tripkit.lighthouse.data.IsOpen;
-import com.tripkit.lighthouse.data.entity.Image;
+import com.tripkit.lighthouse.data.entity.images.ActivityImage;
+import com.tripkit.lighthouse.data.entity.images.Image;
 import com.tripkit.lighthouse.data.entity.Spot;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityDto {
@@ -26,5 +23,5 @@ public class ActivityDto {
     private List<Spot> spots;
 
     // 행사 사진
-    private List<Image> images;
+    private List<ActivityImage> images;
 }
