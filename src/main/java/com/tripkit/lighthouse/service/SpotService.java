@@ -25,7 +25,7 @@ public class SpotService {
 
         List<SpotBasicDto> spotBasicDtos = new ArrayList<>();
 
-        spots = spotRepository.findAllByCategoryIn(category, pageable);
+//        spots = spotRepository.findByCategoryIn(category, pageable);
 
         for (Spot spot : spots) {
             spotBasicDtos.add(modelMapper.map(spot, SpotBasicDto.class));

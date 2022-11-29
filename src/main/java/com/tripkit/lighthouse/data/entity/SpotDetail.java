@@ -19,9 +19,9 @@ public class SpotDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "spotId")
-    private Spot spotId;
+    private Spot spot;
 
     // 메뉴 제목
     private String title;
@@ -30,9 +30,9 @@ public class SpotDetail {
     // 메뉴 설명
     private String description;
 
-    // 메뉴 이미지
-    @OneToOne(mappedBy = "spotDetail")
-    private SpotDetailImage head;
+//    // 메뉴 이미지
+//    @OneToOne(mappedBy = "spotDetail")
+//    private SpotDetailImage head;
 
 
 }

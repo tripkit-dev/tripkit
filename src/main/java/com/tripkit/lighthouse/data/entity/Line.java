@@ -31,7 +31,7 @@ public class Line {
     // 장소 node들
     @OneToMany(mappedBy = "line")
     private List<Spot> spots = new ArrayList<>();
-
-    @OneToMany(mappedBy = "line")
-    private List<LineImage> images = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "line")
+//    private List<LineImage> images = new ArrayList<>();
 }

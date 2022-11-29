@@ -22,6 +22,6 @@ public class ActivityDto {
     // 행사 위치
     private List<Spot> spots;
 
-    // 행사 사진
-    private List<ActivityImage> images;
+//    // 행사 사진
+//    private List<ActivityImage> images;
 }

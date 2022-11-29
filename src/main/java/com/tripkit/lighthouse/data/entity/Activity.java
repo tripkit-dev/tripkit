@@ -33,10 +33,10 @@ public class Activity {
     private IsOpen isOpen;
 
     // 행사 위치
-    @OneToMany(mappedBy = "activity")
-    private List<Spot> spots = new ArrayList<>();
+//    @OneToMany(mappedBy = "activity")
+//    private List<Spot> spots = new ArrayList<>();
 
-    // 행사 사진
-    @OneToMany(mappedBy = "activity")
-    private List<ActivityImage> images = new ArrayList<>();
+//    // 행사 사진
+//    @OneToMany(mappedBy = "activity")
+//    private List<ActivityImage> images = new ArrayList<>();
 }

@@ -39,8 +39,7 @@ public class SpotController {
     @GetMapping("/title")
     public List<SpotBasicDto> getSpotByTitle(
             @RequestParam(required = true) String title,
-            @PageableDefault(size = 10, sort = "title", direction = Sort.Direction.DESC) Pageable pageable
-    ) {
+            @PageableDefault(size = 10, sort = "title", direction = Sort.Direction.DESC) Pageable pageable) {
 
         return spotService.getSpotByTitle(title, pageable);
     }

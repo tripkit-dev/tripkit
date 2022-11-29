@@ -10,8 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Table(name = "spot")
-@Entity(name = "Spot")
+@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -49,9 +48,10 @@ public class Spot {
     private Line line;
 
     // 장소 메뉴
-    @OneToMany(mappedBy = "spot")
-    private List<SpotDetail> spotDetails = new ArrayList<>();
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<SpotDetail> spotDetails;
 
-    @OneToMany(mappedBy = "spot")
-    private List<SpotImage> images = new ArrayList<>();
+
+//    @OneToMany(mappedBy = "spot")
+//    private List<SpotImage> images = new ArrayList<>();
 }

@@ -18,6 +18,6 @@ public class LineBasicDto {
     private String userName;
     // 라인에 포함된 항목들
     private List<SpotBasicDto> spots;
-    // 라인의 이미지들
-    private List<LineImage> images;
+//    // 라인의 이미지들
+//    private List<LineImage> images;
 }
