@@ -63,7 +63,7 @@ class SpotControllerTest {
         spotBasicDtos.add(spotBasicDto);
         when(spotService.getSpotByTitle(any(), any())).thenReturn(spotBasicDtos);
 
-        this.mockMvc.perform(get("/api/title?title=title&page=1") // 요청방식(GET, POST 등등)을 선택하고, url을 입력
+        this.mockMvc.perform(get("/api/title?title=title") // 요청방식(GET, POST 등등)을 선택하고, url을 입력
 //                        .content("{\"title\":\"title\", \n\"link\":\"link\", \n\"category\":\"category\", \n\"description\":\"description\", \n\"telephone\":\"telephone\", \n\"address\":\"address\", \n\"roadAddress\":\"roadAddress\", \n\"13\":\"13\", \n\"13\":\"13\"}") // RequestBody에 대응되는 부분. POST method 같은 경우에는 받는 값이 있어 이 부분에 작성하면 된다.
 //                        .content("{\"title\":\"title\", \"pageable\":\"1\"}")
                         .contentType(MediaType.APPLICATION_JSON)) //json 형식의 요청을 받겠다는 의미
