@@ -1,15 +1,25 @@
-sample:
-  value: default
-
 spring:
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: root
-    password: root
-
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: root
+#    password: root
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
     view:
       suffix: .html
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        order_inserts: true
+#        order_updates: true
+#      generate-ddl: true
+#      show-sql: true
+#    database: ${database}
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+#  datasource:
+#    url: ${datasource}

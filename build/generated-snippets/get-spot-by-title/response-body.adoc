@@ -1,0 +1,34 @@
+[source,options="nowrap"]
+----
+[ {
+  "title" : "title12",
+  "link" : "link1",
+  "category" : "cafe",
+  "description" : "description4",
+  "telephone" : "telephone",
+  "address" : "address",
+  "roadAddress" : "roadAddress",
+  "mapx" : 13,
+  "mapy" : 13
+}, {
+  "title" : "title12",
+  "link" : "link2",
+  "category" : "cafeteria",
+  "description" : "description5",
+  "telephone" : "telephone",
+  "address" : "address",
+  "roadAddress" : "roadAddress",
+  "mapx" : 13,
+  "mapy" : 13
+}, {
+  "title" : "title12",
+  "link" : "link3",
+  "category" : "catcat",
+  "description" : "description6",
+  "telephone" : "telephone",
+  "address" : "address",
+  "roadAddress" : "roadAddress",
+  "mapx" : 13,
+  "mapy" : 13
+} ]
+----

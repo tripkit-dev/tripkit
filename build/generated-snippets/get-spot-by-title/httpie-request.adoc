@@ -1,0 +1,8 @@
+[source,bash]
+----
+$ echo '{
+  "title" : "title12",
+  "pageable" : "1"
+}' | http GET 'http://localhost:8080/api/spots/title' \
+    'Accept:application/json'
+----

@@ -1,0 +1,11 @@
+= Spot API Docs
+
+== GET
+curl Request:
+include::{snippets}/get-spot-by-title/curl-request.adoc[,bash]
+HTTP Request:
+include::{snippets}/get-spot-by-title/http-request.adoc[]
+HTTP Response:
+include::{snippets}/get-spot-by-title/http-response.adoc[]
+
+include::{snippets}/get-spot-by-title/response-fields.adoc[]

@@ -2,11 +2,13 @@ package com.tripkit.lighthouse.controller;
 
 import com.tripkit.lighthouse.data.dto.SpotBasicDto;
 import com.tripkit.lighthouse.service.SpotService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.List;
 
@@ -38,7 +40,7 @@ public class SpotController {
     // TODO 좋아요한 장소들만 불러오기
     @GetMapping("/title")
     public List<SpotBasicDto> getSpotByTitle(
-            @RequestParam(required = true) String title,
+            @RequestParam(required = false) String title,
             @PageableDefault(size = 10, sort = "title", direction = Sort.Direction.DESC) Pageable pageable) {
 
         return spotService.getSpotByTitle(title, pageable);

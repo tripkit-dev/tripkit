@@ -1,0 +1,8 @@
+[source,bash]
+----
+$ echo '{
+  "title" : "title12",
+  "pageable" : "3"
+}' | http GET 'https://docs.api.com/api/title?title=title12' \
+    'Accept:application/json'
+----

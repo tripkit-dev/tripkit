@@ -7,6 +7,7 @@ import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @SpringBootTest
+@ExtendWith({RestDocumentationExtension.class, SpringExtension.class})
 class TripkitApplicationTests {
 
     @Test

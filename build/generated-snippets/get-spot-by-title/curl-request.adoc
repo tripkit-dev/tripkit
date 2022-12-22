@@ -1,0 +1,9 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/api/spots/title' -i -X GET \
+    -H 'Accept: application/json' \
+    -d '{
+  "title" : "title12",
+  "pageable" : "1"
+}'
+----
