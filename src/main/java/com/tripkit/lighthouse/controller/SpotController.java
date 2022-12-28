@@ -39,11 +39,19 @@ public class SpotController {
 
     // TODO 좋아요한 장소들만 불러오기
     @GetMapping("/title")
-    public List<SpotBasicDto> getSpotByTitle(
+    public String getSpotByTitle(
             @RequestParam(required = false) String title,
             @PageableDefault(size = 10, sort = "title", direction = Sort.Direction.DESC) Pageable pageable) {
 
         return spotService.getSpotByTitle(title, pageable);
+    }
+
+    @GetMapping("/search")
+    public String getSpotSearch(
+            @RequestParam(required = false, defaultValue = "서울역 카페") String query,
+            @PageableDefault(size = 10, sort = "title", direction = Sort.Direction.DESC) Pageable pageable) {
+
+        return spotService.getSpotSearch(query, pageable);
     }
 
     @PostMapping("/")

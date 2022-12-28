@@ -28,9 +28,9 @@ public class Line {
     // Line 생성 일자
     private LocalDateTime created_at;
 
-    // 장소 node들
-    @OneToMany(mappedBy = "line")
-    private List<Spot> spots = new ArrayList<>();
+//    // 장소 node들
+//    @OneToMany(mappedBy = "line")
+//    private List<Spot> spots = new ArrayList<>();
 //
 //    @OneToMany(mappedBy = "line")
 //    private List<LineImage> images = new ArrayList<>();
