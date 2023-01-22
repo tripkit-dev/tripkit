@@ -1,4 +1,5 @@
-FROM openjdk:17-jdk-alpine as BUILDER
+#FROM openjdk:17-jdk-alpine as BUILDER
+FROM gradle:7.6-jdk17 as BUILDER
 
 COPY gradlew .
 COPY gradle gradle
