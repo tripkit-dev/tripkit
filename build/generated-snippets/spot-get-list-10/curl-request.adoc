@@ -1,9 +1,0 @@
-[source,bash]
-----
-$ curl 'https://docs.api.com/api/title?title=title12' -i -X GET \
-    -H 'Accept: application/json' \
-    -d '{
-  "title" : "title12",
-  "pageable" : "3"
-}'
-----

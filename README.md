@@ -16,7 +16,7 @@
     ```
 2. 다음의 ``Dockerfile``생성
     ```
-    FROM openjdk:{$your-java-version}-jdk-alpine
+    FROM openjdk:{$YOUR-JAVA-VERSION}-jdk-alpine
     ARG JAR_FILE=build/libs/*.jar
     COPY ${JAR_FILE} app.jar
     ENTRYPOINT ["java","-jar","/app.jar"]
