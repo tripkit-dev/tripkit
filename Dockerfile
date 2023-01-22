@@ -1,5 +1,6 @@
 FROM openjdk:17-jdk
 
+VOLUME /tmp
 # application 결과물 -> build/libs/app.jar
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
