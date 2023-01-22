@@ -1,5 +1,9 @@
-FROM openjdk:17-jdk
+FROM openjdk:17-jdk as BUILDER
 
+RUN chmod +x ./gradlew
+RUN ./gradlew bootjar
+
+FROM openjdk:17-jdk
 VOLUME /tmp
 # application 결과물 -> build/libs/app.jar
 ARG JAR_FILE=build/libs/*.jar
