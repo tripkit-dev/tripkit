@@ -14,75 +14,68 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GoogleAPIConfiguration {
 
+
     @Autowired
     private GoogleProperties googleAPI;
+
 
     public String findPlaceFromText(String text) {
         // Google API 주소 설정
         String googlePlaceAPIAddress = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=";
-        String mainQuery = text;
         String optionalFields = "name,rating,opening_hours,geometry,place_id";
         String APIkey = googleAPI.getKey();
 
-        String url = googlePlaceAPIAddress + mainQuery + "&inputtype=textquery&fields=" + optionalFields + "&key=" + APIkey;
-
-        return url;
+        return googlePlaceAPIAddress + text + "&inputtype=textquery&fields=" + optionalFields + "&key=" + APIkey;
     }
+
 
     public String textSearch(String query) {
         // Google API 주소 설정
         String googlePlaceAPIAddress = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=";
-        String mainQuery = query;
         String optionalFields = "name,rating,opening_hours,geometry,place_id";
         String APIkey = googleAPI.getKey();
 
-        String url = googlePlaceAPIAddress + mainQuery + "&inputtype=textquery&fields=" + optionalFields + "&key=" + APIkey;
-
-        return url;
+        return googlePlaceAPIAddress + query + "&inputtype=textquery&fields=" + optionalFields + "&key=" + APIkey;
     }
 
-    public List<ResponseBody> getResponseBodies(String url) {
-        List<ResponseBody> responseBodies = new ArrayList<>();
 
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
-        MediaType mediaType = MediaType.parse("text/plain");
-        RequestBody body = RequestBody.create(mediaType, "");
+    public String placeDetail(String placeId) {
+        // Google API 주소 설정
+        String googlePlaceAPIAddress = "https://maps.googleapis.com/maps/api/place/details/json?place_id=";
+        String optionalFields = "name,rating,formatted_phone_number,formatted_address,geometry,opening_hours";
+        String APIkey = googleAPI.getKey();
+
+        return googlePlaceAPIAddress + placeId + "&inputtype=textquery&fields=" + optionalFields + "&key=" + APIkey;
+    }
+
+
+    public String getResponseBodyByString(String url) {
+        // setting okhttpclient setting
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+
+        // set mediatype for pasing
+        // set "requestbody" is ONLY for POST
+        // MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
+        // RequestBody body = RequestBody.create(mediaType, "");
+
+        // build request
         Request request = new Request.Builder()
                 .url(url)
-//                .method("GET", body)
+                .method("GET", null)
                 .build();
+
+        // get response from request
         try(Response response = client.newCall(request).execute()) {
-            System.out.println(response);
-            System.out.println(response.body().string());
-            responseBodies.add(response.body());
+            // response.body().string()은 일회성
+            // response는 메모리에 저장되지 않음
+            if (response.isSuccessful()){
+                return response.body().string();
+            }
+            else {
+                return null;
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        return responseBodies;
     }
-
-    public List<String> getPlaceId(String url) {
-        List<String> placeIds = new ArrayList<>();
-
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
-        MediaType mediaType = MediaType.parse("text/plain");
-        RequestBody body = RequestBody.create(mediaType, "");
-        Request request = new Request.Builder()
-                .url(url)
-//                .method("GET", body)
-                .build();
-        try(Response response = client.newCall(request).execute()) {
-            System.out.println(response);
-            System.out.println(response.body());
-            response.body();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        return placeIds;
-    }
-
 }
