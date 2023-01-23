@@ -1,23 +1,22 @@
-#FROM openjdk:17-jdk-alpine as BUILDER
-#FROM gradle:7.6-jdk17 as BUILDER
-#
-#COPY gradlew .
-#COPY gradle gradle
-#COPY build.gradle .
-#COPY settings.gradle .
-#COPY src src
-#RUN chmod +x ./gradlew
-#RUN ./gradlew bootjar
+FROM openjdk:17-jdk as BUILDER
 
-#RUN chmod +x ./gradlew
-#RUN ./gradlew bootjar
+COPY gradlew .
+COPY gradle gradle
+COPY build.gradle .
+COPY settings.gradle .
+COPY src src
+RUN chmod +x ./gradlew
+RUN ./gradlew bootjar
 
-#FROM openjdk:17-jdk
-FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
+RUN chmod +x ./gradlew
+RUN ./gradlew bootjar
+
+FROM openjdk:17-jdk
 # application 결과물 -> build/libs/app.jar
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
+
+EXPOSE 8080
 
 # TRIPKIT-SERVER INITIATE
 ENTRYPOINT ["java","-jar","/app.jar"]
