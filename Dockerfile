@@ -16,7 +16,7 @@
 FROM eclipse-temurin:17-jdk-alpine
 VOLUME /tmp
 # application 결과물 -> build/libs/app.jar
-ARG JAR_FILE=target/*.jar
+ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 
 # TRIPKIT-SERVER INITIATE
