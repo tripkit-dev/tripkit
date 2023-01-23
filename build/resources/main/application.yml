@@ -1,14 +1,18 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+
 spring:
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: root
-#    password: root
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
     view:
       suffix: .html
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: root
+#    password: root
 #  jpa:
 #    hibernate:
 #      ddl-auto: update
