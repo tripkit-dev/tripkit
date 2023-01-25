@@ -1,4 +1,4 @@
-FROM gradle:7.6.0-jdk17-alpine as BUILDER
+FROM gradle:7.6-jdk17-alpine as BUILDER
 
 #COPY gradlew .
 #COPY gradle .
