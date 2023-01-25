@@ -1,7 +1,7 @@
 FROM openjdk:17-jdk as BUILDER
 
 #COPY gradlew .
-#COPY gradle gradle
+#COPY gradle .
 #COPY build.gradle .
 #COPY settings.gradle .
 #COPY src src
@@ -14,7 +14,7 @@ FROM openjdk:17-jdk as BUILDER
 WORKDIR /tripkit
 
 COPY gradle gradle
-COPY build.gradle gradlew gradlew.bat ./
+COPY build.gradle gradlew settings.gradle ./
 COPY src src
 
 RUN gradle build -x test
