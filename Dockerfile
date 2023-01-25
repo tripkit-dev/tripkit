@@ -17,7 +17,7 @@ COPY gradle gradle
 COPY build.gradle gradlew gradlew.bat ./
 COPY src src
 
-RUN ./gradlew build -x test
+RUN gradle build -x test
 
 FROM openjdk:17-jdk-slim
 # application 결과물 -> build/libs/app.jar
