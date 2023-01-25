@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk as BUILDER
+FROM gradle:7.6.0-jdk17-alpine as BUILDER
 
 #COPY gradlew .
 #COPY gradle .
@@ -17,7 +17,7 @@ COPY gradle gradle
 COPY build.gradle gradlew settings.gradle ./
 COPY src src
 
-RUN gradle build -x test
+RUN ./gradlew build -x test
 
 FROM openjdk:17-jdk-slim
 # application 결과물 -> build/libs/app.jar
