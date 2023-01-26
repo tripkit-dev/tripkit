@@ -21,7 +21,7 @@
 
 FROM openjdk:17-jdk-slim
 # application 결과물 -> build/libs/app.jar
-ARG JAR_FILE=build/libs/*.jar
+ARG JAR_FILE=build/libs/*-SNAPSHOT.jar
 COPY ${JAR_FILE} ./app.jar
 
 #WORKDIR /tripkit
