@@ -22,7 +22,7 @@
 FROM openjdk:17-jdk-slim
 # application 결과물 -> build/libs/app.jar
 ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} /app.jar
+COPY ${JAR_FILE} ./app.jar
 
 #WORKDIR /tripkit
 #COPY --from=build /tripkit/src/main/resources resources
