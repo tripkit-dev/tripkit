@@ -22,7 +22,7 @@
 FROM openjdk:17-jdk-slim
 # application 결과물 -> build/libs/app.jar
 ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} app.jar
+COPY ${JAR_FILE} /app.jar
 
 #WORKDIR /tripkit
 #COPY --from=build /tripkit/src/main/resources resources
@@ -30,6 +30,6 @@ COPY ${JAR_FILE} app.jar
 
 # java -Dspring.profiles.active=dev -jar community.jar --spring.config.location=resources/
 # java -DGOOGLE_API_KEYS="" -jar app.jar
-ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar app.jar"]
+ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar /app.jar"]
 
 # multi-stage build가 아닌 해결 법으로 ``gradlew build docker``가 있지만, 이럴 경우 git pull 하기가 복잡해짐
