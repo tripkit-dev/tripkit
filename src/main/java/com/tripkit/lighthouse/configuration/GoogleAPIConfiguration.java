@@ -25,7 +25,7 @@ public class GoogleAPIConfiguration {
         String optionalFields = "name,rating,opening_hours,geometry,place_id";
         String APIkey = googleAPI.getKey();
 
-        return googlePlaceAPIAddress + text + "&inputtype=textquery&fields=" + optionalFields + "&key=" + APIkey;
+        return googlePlaceAPIAddress + text + "&inputtype=textquery&fields=" + optionalFields + "&language=ko&key=" + APIkey;
     }
 
 
@@ -35,7 +35,7 @@ public class GoogleAPIConfiguration {
         String optionalFields = "name,rating,opening_hours,geometry,place_id";
         String APIkey = googleAPI.getKey();
 
-        return googlePlaceAPIAddress + query + "&inputtype=textquery&fields=" + optionalFields + "&key=" + APIkey;
+        return googlePlaceAPIAddress + query + "&inputtype=textquery&fields=" + optionalFields + "&language=ko&key=" + APIkey;
     }
 
 
@@ -45,7 +45,7 @@ public class GoogleAPIConfiguration {
         String optionalFields = "name,rating,formatted_phone_number,formatted_address,geometry,opening_hours,reviews";
         String APIkey = googleAPI.getKey();
 
-        return googlePlaceAPIAddress + placeId + "&inputtype=textquery&fields=" + optionalFields + "&key=" + APIkey;
+        return googlePlaceAPIAddress + placeId + "&inputtype=textquery&fields=" + optionalFields + "&language=ko&key=" + APIkey;
     }
 
 
