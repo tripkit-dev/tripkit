@@ -42,7 +42,7 @@ public class SpotService {
 
         // Data 가공
         for (JsonNode jsonNode : objectMapper.readTree(responseBodyString).get("results")) {
-            spotBasicDtos.add(objectMapper.readValue(jsonNode.toString(), SpotBasicDto.class));
+            spotBasicDtos.add(objectMapper.readValue(jsonNode.toPrettyString(), SpotBasicDto.class));
         }
         return spotBasicDtos;
     }
@@ -67,7 +67,7 @@ public class SpotService {
         responseBodyString = googleAPI.getResponseBodyByString(url);
 
         // 파싱해서 붙여넣기
-        return objectMapper.readValue(objectMapper.readTree(responseBodyString).get("result").toString(), SpotDetailDto.class);
+        return objectMapper.readValue(objectMapper.readTree(responseBodyString).get("result").toPrettyString(), SpotDetailDto.class);
     }
 
     public List<SpotBasicDto> getSpotByLocation(String location, Pageable pageable) throws IOException {
@@ -111,7 +111,7 @@ public class SpotService {
 
         // Data 가공
         for (JsonNode jsonNode : objectMapper.readTree(responseBodyByString).get("results")) {
-            spotBasicDtos.add(objectMapper.readValue(jsonNode.toString(), SpotBasicDto.class));
+            spotBasicDtos.add(objectMapper.readValue(jsonNode.toPrettyString(), SpotBasicDto.class));
         }
 
         return spotBasicDtos;

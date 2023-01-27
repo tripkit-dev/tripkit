@@ -42,7 +42,7 @@ public class GoogleAPIConfiguration {
     public String placeDetail(String placeId) {
         // Google API 주소 설정
         String googlePlaceAPIAddress = "https://maps.googleapis.com/maps/api/place/details/json?place_id=";
-        String optionalFields = "name,rating,formatted_phone_number,formatted_address,geometry,opening_hours";
+        String optionalFields = "name,rating,formatted_phone_number,formatted_address,geometry,opening_hours,reviews";
         String APIkey = googleAPI.getKey();
 
         return googlePlaceAPIAddress + placeId + "&inputtype=textquery&fields=" + optionalFields + "&key=" + APIkey;
