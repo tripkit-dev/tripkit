@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.tripkit.lighthouse.data.dto.GoogleAPIDto.*;
 
+import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -24,6 +26,8 @@ public class SpotDetailDto {
     private String formattedAddress;
     @JsonProperty("opening_hours")
     private OpeningHours openingHours;
+    @JsonProperty("reviews")
+    private List<PlaceReview> reviews;
 
 //    private String roadAddress;
 //

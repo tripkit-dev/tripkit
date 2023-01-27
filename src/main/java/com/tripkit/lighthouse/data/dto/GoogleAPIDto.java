@@ -46,4 +46,16 @@ public class GoogleAPIDto {
         @JsonProperty("weekday_text")
         private List<String> weekDayText;
     }
+
+    @Getter
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class PlaceReview implements Serializable {
+        private String author_name;
+        private Integer rating;
+        private String relative_time_description;
+        private Integer time;
+        private String text;
+    }
 }
