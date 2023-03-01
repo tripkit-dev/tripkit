@@ -3,6 +3,8 @@ package com.tripkit.lighthouse.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.maps.PlaceDetailsRequest;
+import com.google.maps.TextSearchRequest;
 import com.tripkit.lighthouse.configuration.GoogleAPIConfiguration;
 import com.tripkit.lighthouse.data.dto.SpotBasicDto;
 import com.tripkit.lighthouse.data.dto.SpotDetailDto;
